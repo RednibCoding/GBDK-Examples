@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include "Smily.c"
 
+void pdelay(uint8_t numVbls)
+{
+    uint8_t i;
+    for (i = 0; i < numVbls; i++)
+    {
+        vsync();
+    }
+}
+
 // Press F5 to compile and run the compiled game.gb in the Emulicous Emulator/Debugger
 void main(void)
 {
@@ -38,6 +47,6 @@ void main(void)
             scroll_sprite(0, 0, 2);
         }
 
-        delay(30);
+        pdelay(3);
     }
 }

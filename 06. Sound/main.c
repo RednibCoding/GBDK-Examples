@@ -1,6 +1,15 @@
 #include <gb/gb.h>
 #include <stdio.h>
 
+void pdelay(uint8_t numVbls)
+{
+    uint8_t i;
+    for (i = 0; i < numVbls; i++)
+    {
+        vsync();
+    }
+}
+
 // Press F5 to compile and run the compiled game.gb in the Emulicous Emulator/Debugger
 void main(void)
 {
@@ -47,7 +56,7 @@ void main(void)
             // 2-0 3 most significant bits of frequency
             NR14_REG = 0b11000011; // initialize, no consecutive, frequency == MSB + LSB = 011 0000 0000
 
-            delay(300);
+            pdelay(3);
         }
     }
 }

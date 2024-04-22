@@ -5,6 +5,15 @@
 #include "backgroundmap.c"
 #include "windowmap.c"
 
+void pdelay(uint8_t numVbls)
+{
+    uint8_t i;
+    for (i = 0; i < numVbls; i++)
+    {
+        vsync();
+    }
+}
+
 // Press F5 to compile and run the compiled game.gb in the Emulicous Emulator/Debugger
 void main(void)
 {
@@ -27,6 +36,6 @@ void main(void)
     while (1)
     {
         scroll_bkg(1, 0);
-        delay(100);
+        pdelay(3);
     }
 }
