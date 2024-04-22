@@ -35,7 +35,7 @@ void main(void)
             // 6 controls if last forever or stops when NR41 ends
             // (1: step output when length in NR41 expires)
             // 5-0 unused
-            NR44_REG = 0b11110000; // start sound , not continuous
+            NR44_REG = 0b11000000; // start sound , not continuous
 
             delay(300);
         }
